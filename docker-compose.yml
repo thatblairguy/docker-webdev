@@ -1,0 +1,21 @@
+version: "3.7"
+
+services:
+
+  web:
+    ## Use the web folder
+    build:
+      context: web
+    volumes:
+      ## The site root
+      - ./public_html/:/usr/local/apache2/htdocs
+
+    ports:
+      - "8080:80"
+    networks:
+      localwebnet:
+
+
+
+networks:
+  localwebnet:
